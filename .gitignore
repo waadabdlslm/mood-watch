@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.env
+venv/
+.venv/
+
+# ML artifacts (large files)
+ml/artifacts/faiss_index.bin
+ml/artifacts/*.parquet
+data/raw/
+
+# Node
+node_modules/
+frontend/dist/
+frontend/.env.local
+
+# VS Code
+.vscode/

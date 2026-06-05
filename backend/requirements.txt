@@ -1,0 +1,29 @@
+--prefer-binary
+
+# Core API
+fastapi>=0.110,<0.120
+uvicorn[standard]>=0.27,<0.30
+pydantic>=2.6,<3.0
+python-dotenv>=1.0,<2.0
+
+# Auth + Backend integration
+supabase>=2.4,<3.0
+httpx>=0.27,<1.0
+python-jose[cryptography]>=3.3,<4.0
+
+# ML / Data
+numpy>=1.26,<2.0
+pandas>=2.2,<3.0
+scikit-learn>=1.4,<2.0
+
+# Embeddings
+sentence-transformers>=2.6,<3.0
+
+# Vector search (IMPORTANT: optional-safe install)
+faiss-cpu; platform_system != "Windows"
+
+# Fallback for Windows compatibility
+# If FAISS fails, system should use sklearn cosine_similarity instead
+
+# Dev tooling
+tqdm>=4.66,<5.0
