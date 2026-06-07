@@ -3,7 +3,7 @@ configures CORS (Cross-Origin Resource Sharing)'''
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api.routes import auth
+from app.api.routes import auth, profile, recommend, feedback
 
 app = FastAPI(
     title = "MoodWatch API",
@@ -23,6 +23,9 @@ app.add_middleware(
 )
 
 app.include_router(auth.router)
+app.include_router(profile.router)
+app.include_router(recommend.router)
+app.include_router(feedback.router)
 
 @app.get("/health")
 def health_check():

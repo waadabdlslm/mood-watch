@@ -28,7 +28,8 @@ async def get_current_user(
             "email": user.user.email
             }
     
-    except Exception:
+    except Exception as e:
+        print("AUTH DEPENDENCY ERROR:", e)
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Could not validate credentials"

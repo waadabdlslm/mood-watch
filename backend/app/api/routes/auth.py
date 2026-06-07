@@ -80,12 +80,11 @@ async def login(request: LoginRequest):
             user_id=str(response.user.id),
             username=(profile.data.get("username") if profile.data else None)
         )
-    except Exception:
+    except HTTPException:
         raise
-        
     except Exception as e:
         print("LOGIN ERROR:", e)
         raise HTTPException(
             status_code=401, 
-            detail=str(e)
+            detail="Invalid email or password"
             )
